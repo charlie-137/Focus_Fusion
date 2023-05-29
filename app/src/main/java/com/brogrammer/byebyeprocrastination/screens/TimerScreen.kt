@@ -137,7 +137,13 @@ fun BottomNavigationBar(
 
 @Composable
 fun TimerScreen() {
-    Text(text = "Timer", fontWeight = FontWeight.Bold, fontSize = 25.sp, textAlign = TextAlign.Start, modifier = Modifier.padding(start = 10.dp, top = 10.dp))
+    Text(
+        text = "Timer",
+        fontWeight = FontWeight.Bold,
+        fontSize = 25.sp,
+        textAlign = TextAlign.Start,
+        modifier = Modifier.padding(start = 20.dp, top = 10.dp)
+    )
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -157,7 +163,8 @@ fun ListScreen() {
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = "List Screen")
+        AddTask()
+//        Text(text = "List Screen")
     }
 }
 

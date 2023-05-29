@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.brogrammer.byebyeprocrastination.screens.AddTask
 import com.brogrammer.byebyeprocrastination.screens.PreviewNavBar
 import com.brogrammer.byebyeprocrastination.screens.PreviewScreen
 import com.brogrammer.byebyeprocrastination.screens.Timer
@@ -21,6 +22,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PreviewNavBar()
+//            AddTask()
         }
     }
 }
