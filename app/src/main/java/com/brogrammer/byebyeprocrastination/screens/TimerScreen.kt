@@ -25,6 +25,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.brogrammer.byebyeprocrastination.BottomNavItem
+import com.brogrammer.byebyeprocrastination.BottomNavigationScreens
 import androidx.compose.material.BadgedBox as BadgedBox1
 
 
@@ -73,11 +74,21 @@ fun Navigation(navController: NavHostController) {
             TimerScreen()
         }
         composable("list") {
-            ListScreen()
+            ListScreen(navController)
         }
         composable("settings") {
-            SettingsScreen()
+            SettingsScreen(navController)
         }
+        composable(BottomNavigationScreens.TaskListScreen.route) {
+            TaskListScreen(navController = navController)
+        }
+        composable(BottomNavigationScreens.AddTask.route) {
+            AddTask(navController = navController)
+        }
+//        composable("addTask") {
+//            AddTask()
+//        }
+
     }
 }
 
@@ -137,13 +148,7 @@ fun BottomNavigationBar(
 
 @Composable
 fun TimerScreen() {
-    Text(
-        text = "Timer",
-        fontWeight = FontWeight.Bold,
-        fontSize = 25.sp,
-        textAlign = TextAlign.Start,
-        modifier = Modifier.padding(start = 20.dp, top = 10.dp)
-    )
+    Text(text = "Timer", fontWeight = FontWeight.Bold, fontSize = 25.sp, textAlign = TextAlign.Start, modifier = Modifier.padding(start = 10.dp, top = 10.dp))
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -158,23 +163,23 @@ fun TimerScreen() {
 }
 
 @Composable
-fun ListScreen() {
+fun ListScreen(navController: NavController) {
     Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        modifier = Modifier.fillMaxSize()
+//        contentAlignment = Alignment.Center
     ) {
-        AddTask()
+        TaskListScreen(navController)
 //        Text(text = "List Screen")
     }
 }
 
 @Composable
-fun SettingsScreen() {
+fun SettingsScreen(navController: NavController) {
     Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Settings Screen")
+        PreviewCard()
+//        Text(text = "Settings Screen")
     }
 }
 

@@ -29,7 +29,7 @@ fun DailyTaskTrack() {
             Column() {
                 DropDownMenu()
                 Text(
-                    text = "Daily Goal : ",
+                    text = "Daily goal : ",
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.padding(start = 25.dp)
                 )

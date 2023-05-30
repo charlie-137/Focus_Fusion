@@ -11,19 +11,36 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import com.brogrammer.byebyeprocrastination.screens.AddTask
-import com.brogrammer.byebyeprocrastination.screens.PreviewNavBar
-import com.brogrammer.byebyeprocrastination.screens.PreviewScreen
-import com.brogrammer.byebyeprocrastination.screens.Timer
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.brogrammer.byebyeprocrastination.screens.*
 import com.brogrammer.byebyeprocrastination.ui.theme.ByeByeProcrastinationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+//            App()
             PreviewNavBar()
 //            AddTask()
         }
     }
 }
+
+
+//@Composable
+//fun App() {
+//    val navController = rememberNavController()
+//
+//    NavHost(navController, startDestination = "taskListScreen") {
+//        composable("taskListScreen") {
+//            TaskListScreen()
+//        }
+//        composable("addTaskScreen") {
+//            AddTask()
+//        }
+//    }
+//}
+
 

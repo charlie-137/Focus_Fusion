@@ -29,9 +29,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+
+
+
+
 
 @Composable
-fun AddTask() {
+fun AddTask(navController: NavController) {
     var taskName by remember {
         mutableStateOf("")
     }
@@ -54,7 +59,7 @@ fun AddTask() {
                 .fillMaxWidth()
         ) {
 
-            CloseIconComposable(onClick = { })
+            CloseIconComposable(onClick = { navController.popBackStack() })
 
             Text(
                 text = "Add Task",
@@ -113,7 +118,6 @@ fun AddTask() {
         Text(
             text = "Minutes per day : ",
             fontSize = 16.sp,
-//            style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier
                 .padding(top = 16.dp, start = 35.dp)
@@ -144,7 +148,6 @@ fun AddTask() {
         Text(
             text = "Icon : ",
             fontSize = 16.sp,
-//            style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier
                 .padding(top = 30.dp, start = 35.dp)
@@ -206,7 +209,7 @@ fun CloseIconComposable(onClick: () -> Unit) {
     ) {
         Icon(
             imageVector = Icons.Default.Close,
-            contentDescription = "Check Circle",
+            contentDescription = "Close Button",
             modifier = Modifier
                 .size(30.dp)
                 .clickable(
