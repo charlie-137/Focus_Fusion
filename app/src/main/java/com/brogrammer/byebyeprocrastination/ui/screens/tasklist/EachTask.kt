@@ -1,4 +1,4 @@
-package com.brogrammer.byebyeprocrastination.screens
+package com.brogrammer.byebyeprocrastination.ui.screens.tasklist
 
 
 import android.annotation.SuppressLint
@@ -37,7 +37,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.brogrammer.byebyeprocrastination.ui.theme.Shapes
 
 private const val EXPAND_ANIMATION_DURATION = 300
 private const val FADE_IN_ANIMATION_DURATION = 350
